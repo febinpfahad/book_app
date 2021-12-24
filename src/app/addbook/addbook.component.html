@@ -1,0 +1,28 @@
+
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4 mt-5">
+        <form class="bg" enctype="multipart/form-data" method="post" >
+            <h1 class="text-center  mt-4 text-white">Enter Book Details</h1>
+            <input type="text" class="form-control mb-3 mt-5 p-2" name="bid" placeholder="Enter Book Id" [(ngModel)]="bid">
+            <input type="text" class="form-control mb-3 p-2" name="bname" placeholder="Enter Book Name" [(ngModel)]="bname">
+
+            <input type="text" class="form-control mb-3 p-2 p-2" name="desc" placeholder="Description" [(ngModel)]="desc">
+
+            <input type="text" class="form-control mb-3 p-2" name="price" placeholder="Price" [(ngModel)]="price">
+           <Label>Select Image:  </Label> <input type="file" (change)="onFileSelected($event)" [(ngModel)]="img" name="img">
+             <div class="row">
+                 <div class="col-4">
+                    <button class="btn btn-primary clr" (click)="addbook()">ADD BOOK</button>
+
+                 </div>
+                 <div class="col-4"></div>
+                 <div class="col-4">
+                    <button class="btn btn-primary clr1" (click)="viewbook()">VIEW BOOK</button>
+
+                 </div>
+             </div>
+        </form>
+    </div>
+    <div class="col-4"></div>
+</div>

@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="col-4">         
+    </div>
+    <div class="col-4">
+
+        <div *ngIf="users;else error">
+
+            <table class="table table-bordered text-center mt-5  table-hover border-secondary
+        ">
+                <thead class="bg-secondary text-white">
+                    <tr>
+                        <th>User Id</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        
+                        
+
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr *ngFor='let b of users; index as i'>
+                        <th scope="row" data-editable="true">{{i+1}}</th>
+                        <th scope="row">{{b.name}}</th>
+                        <th scope="row">{{b.email_id}}</th>
+                       
+                    </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+    
+        <ng-template #error>"no userss found"</ng-template>
+    </div>
+        
+    </div>
+    <div class="col-4"></div>
+

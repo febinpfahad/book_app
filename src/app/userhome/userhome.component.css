@@ -1,0 +1,32 @@
+
+
+.navbar{
+    
+    width: 85%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo{
+    height: 100px;
+}
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+}
+.navbar ul li a{
+
+    color: blue;
+    text-transform: uppercase;
+    font-size: xx-large;
+    font-weight: bolder;
+}
+.bs{
+    color: maroon;
+    font-weight: bold;
+    font: size 30px;;
+
+}
+

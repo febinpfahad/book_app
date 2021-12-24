@@ -1,0 +1,64 @@
+<div class="row">
+    <div class="col-4">
+        <input type="text" [(ngModel)]="book_name">
+        <button (click)="search()" >Search</button>
+    </div>
+    <div class="col-4">
+        <div *ngIf="books;else error">
+
+            <table class="table table-bordered text-center  table-hover border-secondary
+        ">
+                <thead class="bg-secondary text-white">
+                    <tr>
+                        <th>Book Id</th>
+                        <th>Book Name</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th></th>
+                        <th></th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- <tr *ngFor="let b of books">
+                        <td>{{b.book_id}}</td>
+                        <td>{{b.book_name}}</td>
+                        <td>{{b.description}}</td>
+                        <td>{{b.price}}</td>
+                        <th><button id="{{b._id}}" (click)="edit($event)"><i class="fas fa-edit"></i></button></th>
+                        <td><button id="{{b._id}}"><i class="fas fa-trash"></i></button></td>
+
+                    </tr> -->
+
+                    <tr *ngFor='let b of books; index as i'>
+                        <th scope="row" data-editable="true">{{i+1}}</th>
+                        <th scope="row">{{b.book_name}}</th>
+                        <th scope="row">{{b.description}}</th>
+                        <th scope="row">{{b.price}}</th>
+                        <th scope="row"><button id={{b._id}} class="btn btn-link" style="color:navy;"
+                                (click)="edit($event)"><i class="fa fa-edit"></i></button></th>
+                        <th scope="row"><button id={{b._id}} class="btn btn-link" style="color:red;"
+                                (click)="delete($event)"><i class="fa fa-trash-o"></i></button></th>
+
+                    </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+    
+        <ng-template #error>"no books found"</ng-template>
+    </div>
+    <div class="col-4">
+       <div *ngIf=editFlag>
+            <span>Name:{{name}} </span><br>
+            <span>Description:{{description}} </span><br>
+    
+            <input type="text" value="{{price}}" #updatedPrice>
+    <button id="{{book_id}}" (click)="update(updatedPrice.value,$event)">update</button>
+    <button (click)="cancelEdit()" >Cancel</button>
+
+       </div>  
+
+    </div>
+</div>
